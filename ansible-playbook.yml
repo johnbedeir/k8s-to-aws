@@ -4,25 +4,25 @@
   connection: local
   tasks:
     - name: stop current running container
-      command: docker stop my-project-container
+      command: docker stop comingsoon-container
       ignore_errors: yes
 
     - name: remove stopped container
-      command: docker rm my-project-container
+      command: docker rm comingsoon-container
       ignore_errors: yes
 
-    - name: remove my-project-image
-      command: docker rmi my-project-image
+    - name: remove comingsoon-image
+      command: docker rmi comingsoon-image
       ignore_errors: yes
 
     - name: build docker image using the Dockerfile
-      command: docker build -t my-project-image .
+      command: docker build -t comingsoon-image .
 
     - name: create tag to image
-      command: docker tag my-project-image triple3a/my-project-image
+      command: docker tag comingsoon-image triple3a/comingsoon-image
 
     - name: push image to dockerhub
-      command: docker push triple3a/my-project-image
+      command: docker push triple3a/comingsoon-image
 
     - name: remove docker created images
-      command: docker rmi my-project-image triple3a/my-project-image
+      command: docker rmi comingsoon-image triple3a/comingsoon-image
