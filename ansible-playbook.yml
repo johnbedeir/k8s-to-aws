@@ -18,5 +18,11 @@
     - name: build docker image using the Dockerfile
       command: docker build -t my-project-image .
 
-    - name: create container using my-project-image
-      command: docker run -d -p 8099:80 --name my-project-container my-project-image
+    - name: create tag to image
+      command: docker tag my-project-image triple3a/my-project-image
+
+    - name: push image to dockerhub
+      command: docker push triple3a/my-project-image
+
+    - name: remove docker created images
+      command: docker rmi my-project-image triple3a/my-project-image
