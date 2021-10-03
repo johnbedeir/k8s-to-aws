@@ -1,4 +1,4 @@
-FROM httpd:latest
+FROM docker2021repos/httpd:2.4
 
 MAINTAINER "john.bedeir@gmail.com"
 
